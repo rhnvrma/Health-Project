@@ -1,0 +1,803 @@
+<html>
+   
+<head>
+    <title>BP</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel='stylesheet' href='https://unpkg.com/aos@2.3.0/dist/aos.css'>
+    
+</head><div><style scoped>
+ html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  height: 100%;
+  width: 100%;
+  /*background-image: linear-gradient(180deg, #5961F9 0%, #2AFADF 40%, #F9FEA5 100%);*/
+  background-repeat: no-repeat;
+}
+
+.login-box {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  box-shadow: 0 10px 20px rgba(0,0,0);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form h6 {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  width: 85%;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.login-box h6:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+
+.login-box h6 span {
+  position: absolute;
+  display: block;
+}
+
+.login-box h6 span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box h6 span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, orange);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box h6 span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box h6 span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, orange);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+.btn {
+      cursor: pointer;
+      border: 1px solid #03030300;
+      background-color: transparent;
+      height: auto;
+      width: auto;
+      color: #ffffff;
+      font-size: 1.2em;
+      /* box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6); */
+      
+  }
+  .user-box {
+    color: #fff;
+    display: grid;
+    align-items: center;
+    text-align: center;
+  }
+  .highlight{
+    background-color: aquamarine;
+    animation-name: example;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  }@keyframes example {
+    0%   {background-color:aquamarine; left:0px; top:0px;}
+  50%  {background-color:white; left:200px; top:0px;}
+  100%  {background-color:aquamarine; left:200px; top:200px;}
+}
+.table-body {
+  background: linear-gradient(90deg, #E8E8E8, #ffffff, #E8E8E8);
+  background-size: 200% 200%;
+  animation: Animation 3s linear infinite;
+}
+
+@keyframes Animation {
+  0%{
+    background-position-x: 200%
+  }
+  100%{
+    background-position-x: 0%
+  }
+}.header {
+  background-color: #327a81;
+  color: white;
+  font-size: 1.5em;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+table {
+  width: 100%;
+}
+table td, table th {
+  color: #2b686e;
+  padding: 10px;
+}
+table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+table th {
+  background-color: #daeff1;
+  font-weight: 300;
+}
+table tr:nth-child(2n) {
+  background-color: white;
+}
+table tr:nth-child(2n+1) {
+  background-color: #edf7f8;
+}
+.bubbly-button {
+  font-family: "Helvetica", "Arial", sans-serif;
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em 2em;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  -webkit-appearance: none;
+  appearance: none;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin: 50px;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  
+}
+
+
+.bubbly-button:before, .bubbly-button:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+.bubbly-button:first-of-type::before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #d65519 20%, transparent 20%), radial-gradient(circle, transparent 20%, #d65519 20%, transparent 30%), radial-gradient(circle, #d65519 20%, transparent 20%), radial-gradient(circle, #d65519 20%, transparent 20%), radial-gradient(circle, transparent 10%, #d65519 15%, transparent 20%), radial-gradient(circle, #d65519 20%, transparent 20%), radial-gradient(circle, #d65519 20%, transparent 20%), radial-gradient(circle, #d65519 20%, transparent 20%), radial-gradient(circle, #d65519 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.bubbly-button:first-of-type::after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #d65519 20%, transparent 20%), radial-gradient(circle, #d65519 20%, transparent 20%), radial-gradient(circle, transparent 10%, #d65519 15%, transparent 20%), radial-gradient(circle, #d65519 20%, transparent 20%), radial-gradient(circle, #d65519 20%, transparent 20%), radial-gradient(circle, #d65519 20%, transparent 20%), radial-gradient(circle, #d65519 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.bubbly-button:nth-of-type(2)::before {
+  display: none;
+  top: -75;
+  background-image: radial-gradient(circle, rgb(37, 172, 77) 20%, transparent 20%), radial-gradient(circle, transparent 20%, rgb(37, 172, 77) 20%, transparent 30%), radial-gradient(circle, rgb(37, 172, 77) 20%, transparent 20%), radial-gradient(circle, rgb(37, 172, 77) 20%, transparent 20%), radial-gradient(circle, transparent 10%, rgb(37, 172, 77) 15%, transparent 20%), radial-gradient(circle, rgb(37, 172, 77) 20%, transparent 20%), radial-gradient(circle, rgb(37, 172, 77) 20%, transparent 20%), radial-gradient(circle, rgb(37, 172, 77) 20%, transparent 20%), radial-gradient(circle, rgb(37, 172, 77) 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.bubbly-button:nth-of-type(2)::after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, rgb(37, 172, 77) 20%, transparent 20%), radial-gradient(circle, rgb(37, 172, 77) 20%, transparent 20%), radial-gradient(circle, transparent 10%, rgb(37, 172, 77) 15%, transparent 20%), radial-gradient(circle, rgb(37, 172, 77) 20%, transparent 20%), radial-gradient(circle, rgb(37, 172, 77) 20%, transparent 20%), radial-gradient(circle, rgb(37, 172, 77) 20%, transparent 20%), radial-gradient(circle, rgb(37, 172, 77) 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.bubbly-button:nth-of-type(3)::before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, blue 20%, transparent 20%), radial-gradient(circle, transparent 20%, blue 20%, transparent 30%), radial-gradient(circle, blue 20%, transparent 20%), radial-gradient(circle, blue 20%, transparent 20%), radial-gradient(circle, transparent 10%, blue 15%, transparent 20%), radial-gradient(circle, blue 20%, transparent 20%), radial-gradient(circle, blue 20%, transparent 20%), radial-gradient(circle, blue 20%, transparent 20%), radial-gradient(circle, blue 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.bubbly-button:nth-of-type(3):after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, blue 20%, transparent 20%), radial-gradient(circle, blue 20%, transparent 20%), radial-gradient(circle, transparent 10%, blue 15%, transparent 20%), radial-gradient(circle, blue 20%, transparent 20%), radial-gradient(circle, blue 20%, transparent 20%), radial-gradient(circle, blue 20%, transparent 20%), radial-gradient(circle, blue 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+
+.bubbly-button.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+.bubbly-button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+#myBtn {
+  display: flex;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  height: 50px;
+  width:50px;
+  z-index: 99;
+  font-size: 30px;
+  border: none;
+  outline: none;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 100%;
+  text-align: center;
+}
+
+#myBtn:hover {
+  background-position: 100px;
+    color: #ffffff;
+    /* background: #1d86df; */
+    /* background: -moz-linear-gradient(left, #1d86df 0%, #39b49a 100%); */
+    /*background: -webkit-linear-gradient(left, #1d86df 0%, #39b49a 100%);*/
+    /* background: linear-gradient(to right, #1d86df 0%, #39b49a 100%); */
+    /* filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1d86df', endColorstr='#39b49a', GradientType=1); */
+}  </style><div class="login-box">
+  <h2><img src="../Project for BP/AHA_icon.svg" id="heart" style="position: align-self: start;;" width="50px" height="50px">BloodPressure</h2>
+  <form id="test">
+      <div class="user-box">
+        <input type="number" id="sys" name="" required="">
+        <label>Systolic Pressure</label>
+      </div>
+    <div class="user-box">
+      <input type="number" id="dsys" name="" required="">
+      <label>Diasystolic pressure</label>
+    </div>
+    <h6 style="margin-bottom: 0;">
+      <span></span>
+      <span></span>
+      <span> </span>
+      <span></span>
+      <a href="#scroll"><button class="btn "type="button" onclick="showhide()" style="margin-top:0 ;margin-bottom: 0;">Show details</button></a>
+    </h6>
+  </form>
+</div></div>
+<body style="margin: 0px;"><center>
+    <!--<h2>Heath Care</h2>-->
+    <div class="parallax">
+        <div class="parallaxText" id="health_care">
+            <p><a href="../Project home/index.html" style="text-decoration: none;color:white;">HEALTH CARE</a></p>
+        </div>
+    </div><div id="scroll"></div>
+    <h4><button class="bubbly-button btn-hover color-4" onclick='redirect_Page1(this)' >BMI</button><button class="bubbly-button btn-hover color-1" onclick='redirect_Page2(this)'>BP</button><button class="bubbly-button btn-hover color-9" onclick='redirect_Page3(this)'>O<sub>2</sub></button></h4>
+</center>
+<!-- For High BP. -->
+<div class="imageAndBox item" data-aos="zoom-in">
+  <div class="boxoftheiamge">
+      <h3 id="whichBP">Types of BP</h3>
+      <p id="detalisOfBP">To see details, click on vlaue of BP in the picture.</p>
+  </div>
+  <div class="BP_Machine_Image">
+      <img src="bpMachine.png" usemap="#image-map">
+
+      <map name="image-map">
+          <area target="" alt="sys" title="Systolic BP" onclick="sysBP()" coords="224,96,284,105,266,142,207,134" shape="poly">
+          <area target="" alt="dia" title="Diastolic BP" onclick="diaBP()" coords="220,139,266,145,253,184,204,175" shape="poly">
+      </map>
+  </div>
+</div>
+<h2 id="congo" style="font-size: large; text-align: center;"></h2>
+
+<div class="container">
+  <div class="box">
+    <img src="../Project for BP/a2.jpg">
+    <!-- <span>CSS</span> -->
+  </div>
+  <div class="box">
+    <img src="../Project for BP/a1.jpg">
+    <!-- <span>Image</span> -->
+  </div>
+  <div class="box">
+    <img src="../Project for BP/a3.jpg">
+    <!-- <span>Hover</span> -->
+  </div>
+  <div class="box">
+    <img src="../Project for BP/a4.jpg">
+    <!-- <span>Effect</span> -->
+  </div>
+</div>
+
+<div  id="highbp">
+  <div class="container item" data-aos="fade-left">
+    <div class="components">
+      
+  <div class="form">
+        
+    <p class="form__input">Classifation of High Blood Pressure:</p>
+      </div>
+      
+      
+      
+      <div class="chip" >
+      
+        <h2 ><ol>
+          <li>Normal: Blood pressure below 120/80 mm Hg is considered to be normal.</li>
+          <li>Elevated: When blood pressure readings consistently range from 120 to 129 systolic and less than 80 mm Hg diastolic, it is known as elevated blood pressure. People with elevated blood pressure are at risk of high blood pressure unless steps are taken to control it.</li>
+          <li>Hypertension stage I: In this condition, blood pressure readings consistently range from 130 to 139 systolic or 80 to 89 mm Hg diastolic. Doctors may prescribe blood pressure medications and some lifestyle changes to reduce the risk of any heart diseases.</li>
+          <li>Hypertension stage II: In this condition, blood pressure readings consistently range from 140/90 mm Hg or higher. The doctors may prescribe a combination of both medications and lifestyle changes. It is highly recommended to follow the prescribe medications without any or least changes.</li>
+          <li>Hypertensive stage III: This is the most critical condition and requires emergency medical attention. In this condition, the blood pressure suddenly exceeds 180/120 mm Hg. Contact the physician immediately.</li>
+      </ol> </h2>
+        
+      </div>
+    
+  </div></div><div><div class="container item" data-aos="fade-right">
+    <div class="components">
+      
+  <div class="form">
+        
+    <p class="form__input">Treatment for high blood pressure</p>
+      </div>
+      
+      
+      
+      <div class="chip" >
+      
+        <h2>
+          <ul>
+            <p>Lifestyle changes and regular exercises can greatly help to treat high blood pressure. Here are some lifestyle changes suggested:</p>
+            <li>Quit smoking</li>
+            <li>Avoid alcohol or at least limit the intake</li>
+            <li>Lose weight</li>
+            <li>Cut back on caffeine</li>
+            <li>Avoid too much of stress</li>
+            <li>Eat foods rich in potassium, magnesium, and calcium e.g. bananas and milk</li>
+            <li>Practice meditation and other stress-relieving exercises</li>
+            <li>Regular monitoring of blood pressure after reaching the age of 35 years is advisable</li>
+        </ul>
+      </ol>
+     </h2>
+        
+      </div>
+    
+  </div></div><div>
+<div class="container item" data-aos="slide-up">
+  <div class="components">
+    
+<div class="form">
+      
+  <p class="form__input">Symptoms of High Blood Pressure:</p>
+    </div>
+    
+    
+    
+    <div class="chip" >
+    
+      <h2 ><ul>
+        <p>High blood pressure may not have any symptoms and so it has been labeled "the silent killer." Longstanding high blood pressure can lead to multiple complications.
+            Usually people experience following symptoms with their high blood pressure:</p>
+        <li>Headache</li>
+        <li>Dizziness</li>
+        <li>Shortness of breath</li>
+        <li>Blurred vision</li>
+        <li>The Feeling of pulsations in the neck or head</li>
+        <li>Nausea</li>
+    </ul> </h2>
+      
+    </div>
+  
+</div></div><div></div>
+<div id="lowbp">
+  <div class="container item" data-aos="fade-right">
+    <div class="components">
+      
+  <div class="form">
+        
+    <p class="form__input">Cause of Low Blood Pressure</p>
+      </div>
+      
+      
+      
+      <div class="chip" >
+      
+        <h2 >
+          <ul>
+            <li>Dehydration is common among patients with prolonged nausea, vomiting, diarrhea, which shunts blood away from the organs to the muscles.</li>
+            <li>Other causes of dehydration include exercise, sweating, fever, and heat exhaustion or heat stroke. Moderate to severe dehydration may cause dizziness, or fainting upon standing.</li>
+            <li>Moderate to severe bleeding can quickly deplete an individual's body of blood, leading to low blood pressure. Bleeding can result from trauma, surgical complications, or from gastrointestinal abnormalities such as ulcers, tumors, or diverticulosis.</li>
+            <li>Severe inflammation of organs inside the body such as acute pancreatitis can cause low blood pressure. In acute pancreatitis, fluid leaves the blood vessels to enter the inflamed tissues around the pancreas as well as the abdominal cavity, concentrating blood and reducing its volume.</li>
+        </ul>
+    </h2>
+        
+      </div>
+    
+  </div></div><div><div class="container item" data-aos="fade-left">
+    <div class="components">
+      
+  <div class="form">
+        
+    <p class="form__input">Symptoms of Low Blood Pressure</p>
+      </div>
+      
+      
+      
+      <div class="chip" >
+      
+        <h2><ul>
+          <li>Fainting</li>
+          <li>Dizziness</li>
+          <li>A feeling of lightheadedness</li>
+          <li>Chest pain</li>
+          <li>Blurred vision</li>
+          <li>Increased thirst</li>
+          <p>Note: During pregnancy, blood pressure tends to decrease. Normal blood pressure during pregnancy may be lower than 100/60.</p>
+      </ul>
+     </h2>
+        
+      </div>
+    
+  </div></div><div>
+<div class="container item" data-aos="slide-up">
+  <div class="components">
+    
+<div class="form">
+      
+  <p class="form__input">Benefits of low blood pressure</p>
+    </div>
+    
+    
+    
+    <div class="chip" >
+    
+      <h2 > <ul>
+        <li>Consume lots of fluids especially in hot weather</li>
+        <li>Limit alcoholic drinks</li>
+        <li>Exercise regularly to encourage blood flow</li>
+        <li>While rising, take care to sit upright for a few seconds and then getting off from the bed</li>
+        <li>Stay away from heavy lifting</li>
+        <li>Avoid standing still for a prolonged time</li>
+        <li>Avoid straining while passing stools</li>
+        <li>Avoid prolonged exposure to hot water such as sauna, hot water springs, and spas</li>
+        <li>Compression stocking covering the thigh and calf restricts the blood flow to the lower part of the body</li>
+        <li>Try eating smaller, more frequent meals to avoid post-meal dizziness</li>
+    </ul></h2>
+      
+    </div>
+  
+</div></div><div></div>
+<div class="container item" data-aos="fade-left">
+  <div class="components">
+    
+<div class="form">
+      
+  <p class="form__input">Treatmnet for Low Blood Pressure</p>
+    </div>
+    
+    
+    
+    <div class="chip" >
+    
+      <h2 ><ul>
+        <li>People who have lower blood pressures have a lower risk of stroke, kidney disease, and 
+            heart disease.</li>
+        <li>Athletes or people who exercise regularly, people who maintain ideal body weight, and nonsmokers tend to have lower blood pressures.</li>
+        <li>Low blood pressure is desirable as long as it is not low enough to cause symptoms and damage to the organs in the body.</li>
+    </ul></h2>
+      
+    </div>
+  
+</div></div><div></div>
+</div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top" style="padding-left: 18px;">^</button>
+</body><script  src="./script.js"></script>
+<script src='https://unpkg.com/aos@2.3.0/dist/aos.js'></script><script>
+  
+  $(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
+  
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+  
+        // Store hash
+        var hash = this.hash;
+  
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 700, function(){
+     
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+  });
+  </script>
+<script>
+  function showhide(){ 
+      var sysv = document.getElementById('sys').value;
+   var dsysv = document.getElementById('dsys').value;
+   if ((+(sysv)>=+(120))|| (+(dsysv)>=+(80)) ) { 
+document.getElementById('lowbp').style.display = "none"; } 
+else if ((+(sysv)<=+(80))|| (+(dsysv)<=+(60))){document.getElementById('highbp').style.display = "none";}
+else{document.getElementById('congo').innerHTML=" Congratulations!! your BP is Normal"}
+} 
+
+
+</script>
+
+
+<script>
+  var animateButton = function(e) {
+
+e.preventDefault;
+//reset animation
+e.target.classList.remove('animate');
+
+e.target.classList.add('animate');
+setTimeout(function(){
+e.target.classList.remove('animate');
+},700);
+};
+
+var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+for (var i = 0; i < bubblyButtons.length; i++) {
+bubblyButtons[i].addEventListener('click', animateButton, false);
+}
+</script>
+<script>
+  //Get the button
+  var mybutton = document.getElementById("myBtn");
+  
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  </script>
+  <script>let redirect_Page = (ele) => {
+    	
+    ele.value = 'Redirecting in 5 secs ...';
+    ele.disabled = true;
+    
+    let tID = setTimeout(function () {
+
+  // redirect page.
+        window.location.href = '../Project for BP/index.html';
+        
+        window.clearTimeout(tID);		// clear time out.
+        
+    }, 5000);	// call function after 5000 milliseconds or 5 seconds
+}</script>
+<script  src="./script.js"></script>
+<script src='https://unpkg.com/aos@2.3.0/dist/aos.js'></script>
+<script>
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("health_care").style.fontSize = "3vw";
+    // document.getElementById("heart").style.transform = "scale(0.1,0.1);translateY(50px)";
+    // document.getElementById("heart").style.transform = "";
+  } else {
+    document.getElementById("health_care").style.fontSize = "6vw";
+  }
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("health_care").style.backgroundColor = "#00000095";
+  } else {
+    document.getElementById("health_care").style.backgroundColor = "#00000060";
+  }
+}
+</script>
+<script>let redirect_Page1 = (ele) => {
+    	
+      ele.value = 'Redirecting in 5 secs ...';
+      ele.disabled = true;
+      
+      let tID = setTimeout(function () {
+
+    // redirect page.
+          window.location.href = '../Project for BMI/index.html';
+          
+          window.clearTimeout(tID);		// clear time out.
+          
+      }, 1500);	// call function after 5000 milliseconds or 5 seconds
+  }</script>
+  <script>let redirect_Page2 = (ele) => {
+    	
+      ele.value = 'Redirecting in 5 secs ...';
+      ele.disabled = true;
+      
+      let tID = setTimeout(function () {
+
+    // redirect page.
+          window.location.href = '../Project for BP/index.html';
+          
+          window.clearTimeout(tID);		// clear time out.
+          
+      }, 1500);	// call function after 5000 milliseconds or 5 seconds
+  }</script>
+  <script>let redirect_Page3 = (ele) => {
+    	
+      ele.value = 'Redirecting in 5 secs ...';
+      ele.disabled = true;
+      
+      let tID = setTimeout(function () {
+
+    // redirect page.
+          window.location.href = '../Project for BP/index.html';
+          
+          window.clearTimeout(tID);		// clear time out.
+          
+      }, 1500);	// call function after 5000 milliseconds or 5 seconds
+  }</script>
+  <script>
+    function sysBP() {
+        document.getElementById("whichBP").innerHTML="Systolic Blood Pressure";
+        document.getElementById("detalisOfBP").innerHTML="It measures the pressure in your arteries when your heart beats. Normal value: 120 mm/Hg";
+    }
+    function diaBP() {
+        document.getElementById("whichBP").innerHTML="Diastolic Blood Pressure";
+        document.getElementById("detalisOfBP").innerHTML="It measures the pressure in your arteries when your heart rests between beats. Normal value: 80 mm/Hg";
+    }
+</script>
+</html>
